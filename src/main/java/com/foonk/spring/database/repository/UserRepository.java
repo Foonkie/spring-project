@@ -1,7 +1,7 @@
 package com.foonk.spring.database.repository;
 
 
-import com.foonk.spring.database.rpool.ConnectionPool;
+import com.foonk.spring.database.pool.ConnectionPool;
 
 public class UserRepository {
     public UserRepository(ConnectionPool connectionPool) {
