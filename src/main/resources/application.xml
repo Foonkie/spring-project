@@ -4,13 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="pool1" name="p1,p2,p3" class="com.foonk.spring.database.pool.ConnectionPool">
-        <constructor-arg name="username" type="java.lang.String" value="postgres"/>
+    <bean id="pool1" name="p1,p2,p3" class="com.foonk.spring.database.pool.ConnectionPool" >
+        <constructor-arg name="username" type="java.lang.String" value="Vasya"/>
         <constructor-arg name="properties" type="java.util.Map">
-            <map>
-                <entry key="url" value="postgresurl"/>
-                <entry key="password" value="123"/>
-            </map>
+            <null/>
         </constructor-arg>
         <constructor-arg name="poolSize" type="java.lang.Integer" value="10"/>
         <constructor-arg name="args" type="java.util.List">
@@ -19,6 +16,13 @@
                 <value>--arg2=value2</value>
             </list>
         </constructor-arg>
+        <property name="properties">
+            <map>
+                <entry key="url" value="postgresurl"/>
+                <entry key="password" value="123"/>
+            </map>
+        </property>
+
     </bean>
     <bean id="companyRepository" class="com.foonk.spring.database.repository.CompanyRepository" factory-method="of">
         <constructor-arg ref="pool1"/>
