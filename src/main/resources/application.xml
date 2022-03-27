@@ -7,9 +7,9 @@
                              http://www.springframework.org/schema/context
                              http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-    <context:property-placeholder location="classpath:application.properties"/>
+<!--    <context:property-placeholder location="classpath:application.properties"/>-->
 
-    <context:component-scan base-package="com.foonk.spring"/>
+<!--    <context:component-scan base-package="com.foonk.spring"/>-->
     <!--    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
     <!--        <property name="locations" value="classpath:application.properties"/>-->
     <!--    </bean>-->
