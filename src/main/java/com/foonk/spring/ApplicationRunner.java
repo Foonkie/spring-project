@@ -10,7 +10,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ApplicationRunner {
 
     public static void main(String[] args) {
-        try (var context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class)) {
+        try (var context = new AnnotationConfigApplicationContext();) {
+            context.register(ApplicationConfiguration.class);
+            context.getEnvironment().setActiveProfiles("web", "prod");
+            context.refresh();
             //  clazz -> String -> Map<String, Object>
             var connectionPool = context.getBean("p1", ConnectionPool.class);
             System.out.println(connectionPool);
