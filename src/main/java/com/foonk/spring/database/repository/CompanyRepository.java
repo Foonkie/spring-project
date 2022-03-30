@@ -5,6 +5,7 @@ import com.foonk.spring.bpp.InjectBean;
 import com.foonk.spring.bpp.Transaction;
 import com.foonk.spring.database.pool.ConnectionPool;
 import com.foonk.spring.entity.Company;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
@@ -15,14 +16,9 @@ import java.util.Optional;
 @Repository
 @Transaction
 @Auditing
+@RequiredArgsConstructor
 public class CompanyRepository implements CrudRepository<Integer, Company> {
-    public CompanyRepository(ConnectionPool pool1,
-                             List<ConnectionPool> pools,
-                           @Value("${db.pool.size}")  Integer poolSize) {
-        this.pool1 = pool1;
-        this.pools = pools;
-        this.poolSize = poolSize;
-    }
+
 
 
     private final ConnectionPool pool1;

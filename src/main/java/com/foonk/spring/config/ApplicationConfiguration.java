@@ -14,13 +14,6 @@ import static org.springframework.context.annotation.ComponentScan.*;
 @Import(WebConfiguration.class)
 @Configuration
 @PropertySource("classpath:application.properties")
-@ComponentScan(basePackages = "com.foonk.spring",
-useDefaultFilters = false,
-includeFilters = {
-        @Filter(type = FilterType.ANNOTATION, value = Component.class),
-        @Filter(type = FilterType.ASSIGNABLE_TYPE, value = CrudRepository.class),
-        @Filter(type = FilterType.REGEX, pattern ="com\\..+Repository" )
-})
 public class ApplicationConfiguration {
     @Bean("pool2")
     @Scope(BeanDefinition.SCOPE_SINGLETON)
