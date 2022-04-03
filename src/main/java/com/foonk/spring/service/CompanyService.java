@@ -1,13 +1,15 @@
 package com.foonk.spring.service;
 
 import com.foonk.spring.database.repository.CrudRepository;
-import com.foonk.spring.entity.Company;
+import com.foonk.spring.database.entity.Company;
 import com.foonk.spring.listner.entity.AccessType;
 import com.foonk.spring.listner.entity.EntityEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import com.foonk.spring.dto.CompanyReadDto;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Optional;
 
 @Service
@@ -17,7 +19,7 @@ public class CompanyService {
     private final UserService userService;
     private final CrudRepository<Integer, Company> companyRepository;
 
-
+    @Transactional
     public Optional<CompanyReadDto> findById(Integer id){
         return companyRepository.findById(id)
                 .map(entity->{

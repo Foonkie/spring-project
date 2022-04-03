@@ -13,7 +13,7 @@ import static org.springframework.context.annotation.ComponentScan.*;
 //@ImportResource("classpath:application.xml")
 @Import(WebConfiguration.class)
 @Configuration
-@PropertySource("classpath:application.properties")
+
 public class ApplicationConfiguration {
     @Bean("pool2")
     @Scope(BeanDefinition.SCOPE_SINGLETON)
