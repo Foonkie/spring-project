@@ -1,7 +1,7 @@
 package com.foonk.spring.service;
 
 import com.foonk.spring.database.repository.CompanyRepository;
-import com.foonk.spring.database.repository.CrudRepository;
+
 import com.foonk.spring.database.repository.UserRepository;
 import com.foonk.spring.database.entity.Company;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.Map;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final CrudRepository<Integer, Company> companyRepository;
+    private final CompanyRepository companyRepository;
 
 
 

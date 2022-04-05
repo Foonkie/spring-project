@@ -1,7 +1,7 @@
 package com.foonk.spring.config;
 
 import com.foonk.spring.database.pool.ConnectionPool;
-import com.foonk.spring.database.repository.CrudRepository;
+
 import com.foonk.spring.database.repository.UserRepository;
 import com.foonk.web.config.WebConfiguration;
 import org.springframework.beans.factory.annotation.Value;

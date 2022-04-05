@@ -1,6 +1,7 @@
 package com.foonk.spring.service;
 
-import com.foonk.spring.database.repository.CrudRepository;
+import com.foonk.spring.database.repository.CompanyRepository;
+
 import com.foonk.spring.dto.CompanyReadDto;
 import com.foonk.spring.database.entity.Company;
 import com.foonk.spring.listner.entity.EntityEvent;
@@ -30,7 +31,7 @@ class CompanyServiceTest {
     @Mock
     private  UserService userService;
     @Mock
-    private  CrudRepository<Integer, Company> companyRepository;
+    private CompanyRepository companyRepository;
     @InjectMocks
     private CompanyService companyService;
     @Test

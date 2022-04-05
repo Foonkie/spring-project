@@ -4,7 +4,7 @@ import com.foonk.spring.config.ApplicationConfiguration;
 import com.foonk.spring.config.DatabaseProperties;
 import com.foonk.spring.database.pool.ConnectionPool;
 import com.foonk.spring.database.repository.CompanyRepository;
-import com.foonk.spring.database.repository.CrudRepository;
+
 import com.foonk.spring.service.CompanyService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,7 @@
 package com.foonk.spring.integration.service;
 
 import com.foonk.spring.config.DatabaseProperties;
+import com.foonk.spring.database.repository.CompanyRepository;
 import com.foonk.spring.dto.CompanyReadDto;
 import com.foonk.spring.integration.annotation.IT;
 import com.foonk.spring.service.CompanyService;
@@ -20,7 +21,13 @@ public class CompanyServiceIT {
 
     private  CompanyService companyService;
     private  DatabaseProperties databaseProperties;
+    private final CompanyRepository companyRepository;
 
+    @Test
+    void checkFindByQueries() {
+        companyRepository.findByName("google");
+        companyRepository.findAllByNameContainingIgnoreCase("a");
+    }
     @Test
     void findById() {
         var actualResult = companyService.findById(COMPANY_ID);

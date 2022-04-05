@@ -1,6 +1,7 @@
 package com.foonk.spring.service;
 
-import com.foonk.spring.database.repository.CrudRepository;
+import com.foonk.spring.database.repository.CompanyRepository;
+
 import com.foonk.spring.database.entity.Company;
 import com.foonk.spring.listner.entity.AccessType;
 import com.foonk.spring.listner.entity.EntityEvent;
@@ -17,7 +18,7 @@ import java.util.Optional;
 public class CompanyService {
     private final ApplicationEventPublisher applicationEventPublisher;
     private final UserService userService;
-    private final CrudRepository<Integer, Company> companyRepository;
+    private final CompanyRepository companyRepository;
 
     @Transactional
     public Optional<CompanyReadDto> findById(Integer id){
