@@ -2,7 +2,7 @@ db:
   username: ${username.value:postgres}
   password: pass
   driver: PostgresDriver
-  url: postgres:5432
+  url: database2:5432
   hosts: localhost,127.0.0.1
   properties:
     first: 123
