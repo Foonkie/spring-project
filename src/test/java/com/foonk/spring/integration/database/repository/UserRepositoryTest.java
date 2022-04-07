@@ -4,6 +4,8 @@ import com.foonk.spring.database.repository.UserRepository;
 import com.foonk.spring.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 
 import java.time.LocalDate;
 
@@ -18,7 +20,17 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 class UserRepositoryTest {
 
     private final UserRepository userRepository;
+    @Test
+    void checkPageable() {
+        var pageable = PageRequest.of(0, 2, Sort.by("id"));
+        var slice = userRepository.findAllBy(pageable);
+        slice.forEach(user -> System.out.println(user.getCompany().getName()));
 
+        while (slice.hasNext()) {
+            slice = userRepository.findAllBy(slice.nextPageable());
+            slice.forEach(user -> System.out.println(user.getCompany().getName()));
+        }
+    }
     @Test
     void checkUpdate() {
         var ivan = userRepository.getById(1L);
