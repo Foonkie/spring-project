@@ -1,6 +1,7 @@
 package com.foonk.spring.integration.database.repository;
 import com.foonk.spring.database.entity.Role;
 import com.foonk.spring.database.repository.UserRepository;
+import com.foonk.spring.dto.PersonalInfo;
 import com.foonk.spring.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -50,5 +52,10 @@ class UserRepositoryTest {
     void checkQueries() {
         var users = userRepository.findAllBy("a", "ov");
         assertThat(users).hasSize(3);
+    }
+    @Test
+    void checkProjections(){
+        var users = userRepository.findAllByCompanyId(1, PersonalInfo.class);
+        assertThat(users).hasSize(2);
     }
 }

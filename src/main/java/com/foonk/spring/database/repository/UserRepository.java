@@ -4,6 +4,7 @@ package com.foonk.spring.database.repository;
 import com.foonk.spring.database.entity.Role;
 import com.foonk.spring.database.entity.User;
 import com.foonk.spring.database.pool.ConnectionPool;
+import com.foonk.spring.dto.PersonalInfo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -38,5 +39,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "select u from User u",
             countQuery = "select count(distinct u.firstname) from User u")
     Page<User> findAllBy(Pageable pageable);
+
+    <T> List<T> findAllByCompanyId(Integer companyId,Class<T> clazz);
 }
 
