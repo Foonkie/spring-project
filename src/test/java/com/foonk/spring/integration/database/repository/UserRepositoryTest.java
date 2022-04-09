@@ -2,6 +2,7 @@ package com.foonk.spring.integration.database.repository;
 import com.foonk.spring.database.entity.Role;
 import com.foonk.spring.database.repository.UserRepository;
 import com.foonk.spring.dto.PersonalInfo;
+import com.foonk.spring.dto.UserFilter;
 import com.foonk.spring.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,22 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 class UserRepositoryTest {
 
     private final UserRepository userRepository;
+
+    @Test
+    void checkAuditing() {
+        var ivan = userRepository.findById(1L).get();
+        ivan.setBirthDate(ivan.getBirthDate().plusYears(1L));
+        userRepository.flush();
+        System.out.println();
+    }
+    @Test
+    void checkCustomImplementation() {
+        UserFilter filter = new UserFilter(
+                null, "%ov%", LocalDate.now()
+        );
+        var users = userRepository.findAllByFilter(filter);
+        assertThat(users).hasSize(4);
+    }
     @Test
     void checkPageable() {
         var pageable = PageRequest.of(0, 2, Sort.by("id"));
@@ -54,8 +71,8 @@ class UserRepositoryTest {
         assertThat(users).hasSize(3);
     }
     @Test
-    void checkProjections(){
-        var users = userRepository.findAllByCompanyId(1, PersonalInfo.class);
+    void checkProjections() {
+        var users = userRepository.findAllByCompanyId(1);
         assertThat(users).hasSize(2);
     }
 }
