@@ -1,35 +1,136 @@
-2022-04-10 23:12:55.158  INFO 4076 --- [Test worker] c.f.s.i.d.repository.UserRepositoryTest  : Starting UserRepositoryTest using Java 17.0.2 on Kate with PID 4076 (started by Katyusha in C:\Users\Katyusha\IdeaProjects\spring-project)
-2022-04-10 23:12:55.158  INFO 4076 --- [Test worker] c.f.s.i.d.repository.UserRepositoryTest  : The following profiles are active: test
-2022-04-10 23:12:56.016  INFO 4076 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-04-10 23:12:56.181  INFO 4076 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149 ms. Found 2 JPA repository interfaces.
-2022-04-10 23:12:57.675  INFO 4076 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-04-10 23:12:57.804  INFO 4076 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
-2022-04-10 23:12:58.135  INFO 4076 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-04-10 23:12:58.372  INFO 4076 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-10 23:12:58.618  INFO 4076 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-10 23:12:58.697  INFO 4076 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2022-04-10 23:12:58.801  INFO 4076 --- [Test worker] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
-2022-04-10 23:13:02.417  INFO 4076 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-04-10 23:13:02.578  INFO 4076 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-04-10 23:13:02.624  INFO 4076 --- [Test worker] c.foonk.spring.config.JpaConfiguration   : Jpa configuration is enabled
-2022-04-10 23:13:02.640  INFO 4076 --- [Test worker] c.f.spring.database.pool.ConnectionPool  : Init connection pool
-2022-04-10 23:13:04.288  INFO 4076 --- [Test worker] c.f.spring.database.pool.ConnectionPool  : Init connection pool
-2022-04-10 23:13:04.577  INFO 4076 --- [Test worker] c.f.s.i.d.repository.UserRepositoryTest  : Started UserRepositoryTest in 10.145 seconds (JVM running for 12.744)
-2022-04-10 23:13:04.629  INFO 4076 --- [Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1601e47 testClass = UserRepositoryTest, testInstance = com.foonk.spring.integration.database.repository.UserRepositoryTest@5b01b3f8, testMethod = checkJdbcTemplate@UserRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@3bffddff testClass = UserRepositoryTest, locations = '{}', classes = '{class com.foonk.spring.ApplicationRunner}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@5dd1c9f2, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@126945f9, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@b1712f3, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4758820d, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7a1a3478, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@483f6d77], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@499445d2]; rollback [true]
-2022-04-10 23:13:04.976 DEBUG 4076 --- [Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
-2022-04-10 23:13:04.976 DEBUG 4076 --- [Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT
-    firstname,
-    lastname,
-    birth_date
-FROM users
-WHERE company_id = ?
-    AND role = ?
-]
-2022-04-10 23:13:04.986 TRACE 4076 --- [Test worker] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown
-2022-04-10 23:13:04.991 TRACE 4076 --- [Test worker] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [USER], value class [java.lang.String], SQL type unknown
-2022-04-10 23:13:05.214  INFO 4076 --- [Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1601e47 testClass = UserRepositoryTest, testInstance = com.foonk.spring.integration.database.repository.UserRepositoryTest@5b01b3f8, testMethod = checkJdbcTemplate@UserRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@3bffddff testClass = UserRepositoryTest, locations = '{}', classes = '{class com.foonk.spring.ApplicationRunner}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@5dd1c9f2, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@126945f9, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@b1712f3, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4758820d, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7a1a3478, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@483f6d77], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
-2022-04-10 23:13:05.251  INFO 4076 --- [SpringApplicationShutdownHook] c.f.spring.database.pool.ConnectionPool  : Clean connection pool
-2022-04-10 23:13:05.254  INFO 4076 --- [SpringApplicationShutdownHook] c.f.spring.database.pool.ConnectionPool  : Clean connection pool
-2022-04-10 23:13:05.254  INFO 4076 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-04-10 23:13:05.257  INFO 4076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-10 23:13:05.299  INFO 4076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-12 00:12:21.241  INFO 4656 --- [main] com.foonk.spring.ApplicationRunner       : Starting ApplicationRunner using Java 17.0.2 on Kate with PID 4656 (C:\Users\Katyusha\IdeaProjects\spring-project\build\classes\java\main started by Katyusha in C:\Users\Katyusha\IdeaProjects\spring-project)
+2022-04-12 00:12:21.251  INFO 4656 --- [main] com.foonk.spring.ApplicationRunner       : The following profiles are active: qa
+2022-04-12 00:12:21.868  INFO 4656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-12 00:12:21.978  INFO 4656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 2 JPA repository interfaces.
+2022-04-12 00:12:22.628  INFO 4656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-12 00:12:22.818  INFO 4656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-12 00:12:23.023  INFO 4656 --- [main] liquibase.database                       : Set default schema name to public
+2022-04-12 00:12:23.193  INFO 4656 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2022-04-12 00:12:23.273  INFO 4656 --- [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2022-04-12 00:12:23.299  INFO 4656 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2022-04-12 00:12:23.379  INFO 4656 --- [main] liquibase.changelog                      : Custom SQL executed
+2022-04-12 00:12:23.384  INFO 4656 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-1.0.sql::1::foonk ran successfully in 35ms
+2022-04-12 00:12:23.444  INFO 4656 --- [main] liquibase.changelog                      : Custom SQL executed
+2022-04-12 00:12:23.449  INFO 4656 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-1.0.sql::2::foonk ran successfully in 25ms
+2022-04-12 00:12:23.474  INFO 4656 --- [main] liquibase.changelog                      : Custom SQL executed
+2022-04-12 00:12:23.479  INFO 4656 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-1.0.sql::3::foonk ran successfully in 30ms
+2022-04-12 00:12:23.504  INFO 4656 --- [main] liquibase.changelog                      : Custom SQL executed
+2022-04-12 00:12:23.509  INFO 4656 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-1.0.sql::4::foonk ran successfully in 15ms
+2022-04-12 00:12:23.534  INFO 4656 --- [main] liquibase.changelog                      : Custom SQL executed
+2022-04-12 00:12:23.534  INFO 4656 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-1.0.sql::5::foonk ran successfully in 25ms
+2022-04-12 00:12:23.559  INFO 4656 --- [main] liquibase.changelog                      : Custom SQL executed
+2022-04-12 00:12:23.564  INFO 4656 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-1.0.sql::6::foonk ran successfully in 25ms
+2022-04-12 00:12:23.574  INFO 4656 --- [main] liquibase.changelog                      : Custom SQL executed
+2022-04-12 00:12:23.574  INFO 4656 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-2.0.sql::1::foonk ran successfully in 5ms
+2022-04-12 00:12:23.584  INFO 4656 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2022-04-12 00:12:23.764  INFO 4656 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-12 00:12:23.844  INFO 4656 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-04-12 00:12:23.999  INFO 4656 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-12 00:12:24.124  INFO 4656 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-04-12 00:12:24.154  INFO 4656 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2022-04-12 00:12:25.704 ERROR 4656 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [revision]
+2022-04-12 00:12:25.709  WARN 4656 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [revision]
+2022-04-12 00:12:25.709  INFO 4656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-12 00:12:25.719  INFO 4656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-12 00:12:25.729  INFO 4656 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-12 00:12:25.789 ERROR 4656 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [revision]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-2.6.2.jar:2.6.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) ~[spring-boot-2.6.2.jar:2.6.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) ~[spring-boot-2.6.2.jar:2.6.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.2.jar:2.6.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) ~[spring-boot-2.6.2.jar:2.6.2]
+	at com.foonk.spring.ApplicationRunner.main(ApplicationRunner.java:19) ~[main/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [revision]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.14.jar:5.3.14]
+	... 15 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [revision]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:129) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:42) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:97) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:76) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:200) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.14.jar:5.3.14]
+	... 19 common frames omitted
+
+2022-04-12 00:16:52.332  INFO 2412 --- [main] com.foonk.spring.ApplicationRunner       : Starting ApplicationRunner using Java 17.0.2 on Kate with PID 2412 (C:\Users\Katyusha\IdeaProjects\spring-project\build\classes\java\main started by Katyusha in C:\Users\Katyusha\IdeaProjects\spring-project)
+2022-04-12 00:16:52.337  INFO 2412 --- [main] com.foonk.spring.ApplicationRunner       : The following profiles are active: qa
+2022-04-12 00:16:52.907  INFO 2412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-12 00:16:53.032  INFO 2412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 2 JPA repository interfaces.
+2022-04-12 00:16:53.697  INFO 2412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-12 00:16:53.827  INFO 2412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-12 00:16:54.028  INFO 2412 --- [main] liquibase.database                       : Set default schema name to public
+2022-04-12 00:16:54.153  INFO 2412 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2022-04-12 00:16:54.370  INFO 2412 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2022-04-12 00:16:54.477  INFO 2412 --- [main] liquibase.changelog                      : Custom SQL executed
+2022-04-12 00:16:54.482  INFO 2412 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-2.1.sql::1::foonk ran successfully in 35ms
+2022-04-12 00:16:54.547  INFO 2412 --- [main] liquibase.changelog                      : Custom SQL executed
+2022-04-12 00:16:54.547  INFO 2412 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-2.1.sql::2::foonk ran successfully in 20ms
+2022-04-12 00:16:54.557  INFO 2412 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2022-04-12 00:16:54.712  INFO 2412 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-12 00:16:54.777  INFO 2412 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-04-12 00:16:54.937  INFO 2412 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-12 00:16:55.116  INFO 2412 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-04-12 00:16:55.161  INFO 2412 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2022-04-12 00:16:56.929  INFO 2412 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-12 00:16:57.039  INFO 2412 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-12 00:16:57.054  INFO 2412 --- [main] c.foonk.spring.config.JpaConfiguration   : Jpa configuration is enabled
+2022-04-12 00:16:57.064  INFO 2412 --- [main] c.f.spring.database.pool.ConnectionPool  : Init connection pool
+2022-04-12 00:16:57.919  INFO 2412 --- [main] c.f.spring.database.pool.ConnectionPool  : Init connection pool
+2022-04-12 00:16:58.049  INFO 2412 --- [main] com.foonk.spring.ApplicationRunner       : Started ApplicationRunner in 6.454 seconds (JVM running for 7.327)
+2022-04-12 00:16:58.064  INFO 2412 --- [SpringApplicationShutdownHook] c.f.spring.database.pool.ConnectionPool  : Clean connection pool
+2022-04-12 00:16:58.064  INFO 2412 --- [SpringApplicationShutdownHook] c.f.spring.database.pool.ConnectionPool  : Clean connection pool
+2022-04-12 00:16:58.069  INFO 2412 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-12 00:16:58.069  INFO 2412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-12 00:16:58.084  INFO 2412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-12 22:38:01.138  INFO 8180 --- [main] com.foonk.spring.ApplicationRunner       : Starting ApplicationRunner using Java 17.0.2 on Kate with PID 8180 (C:\Users\Katyusha\IdeaProjects\spring-project\build\classes\java\main started by Katyusha in C:\Users\Katyusha\IdeaProjects\spring-project)
+2022-04-12 22:38:01.143  INFO 8180 --- [main] com.foonk.spring.ApplicationRunner       : The following profiles are active: qa
+2022-04-12 22:38:01.973  INFO 8180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-12 22:38:02.108  INFO 8180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 2 JPA repository interfaces.
+2022-04-12 22:38:03.198  INFO 8180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-12 22:38:03.213  INFO 8180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-12 22:38:03.213  INFO 8180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-12 22:38:03.383  INFO 8180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-12 22:38:03.383  INFO 8180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2160 ms
+2022-04-12 22:38:03.883  INFO 8180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-12 22:38:04.043  INFO 8180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-12 22:38:04.428  INFO 8180 --- [main] liquibase.database                       : Set default schema name to public
+2022-04-12 22:38:04.608  INFO 8180 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2022-04-12 22:38:04.853  INFO 8180 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2022-04-12 22:38:04.918  INFO 8180 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2022-04-12 22:38:05.083  INFO 8180 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-12 22:38:05.203  INFO 8180 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-04-12 22:38:05.563  INFO 8180 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-12 22:38:05.753  INFO 8180 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-04-12 22:38:05.818  INFO 8180 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2022-04-12 22:38:08.053  INFO 8180 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-12 22:38:08.203  INFO 8180 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-12 22:38:08.218  INFO 8180 --- [main] c.foonk.spring.config.JpaConfiguration   : Jpa configuration is enabled
+2022-04-12 22:38:08.228  INFO 8180 --- [main] c.f.spring.database.pool.ConnectionPool  : Init connection pool
+2022-04-12 22:38:09.118  INFO 8180 --- [main] c.f.spring.database.pool.ConnectionPool  : Init connection pool
+2022-04-12 22:38:09.223  WARN 8180 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-12 22:38:09.684  INFO 8180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-12 22:38:09.699  INFO 8180 --- [main] com.foonk.spring.ApplicationRunner       : Started ApplicationRunner in 9.321 seconds (JVM running for 11.67)
