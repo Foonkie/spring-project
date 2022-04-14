@@ -5,6 +5,7 @@
     <title>Bye</title>
 </head>
 <body>
-Bye World!
+Bye ${sessionScope.userReadDto.username}!
+${}
 </body>
 </html>
