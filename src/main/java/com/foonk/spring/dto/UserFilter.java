@@ -10,7 +10,17 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Value
 public class UserFilter {
-    String firstname;
-    String lastname;
-    LocalDate birthDate;
+   public String firstname;
+   public String lastname;
+   public LocalDate birthDate;
+
+   public String firstname(){
+       return firstname;
+   }
+    public String lastname(){
+        return lastname;
+    }
+    public LocalDate birthDate(){
+       return birthDate;
+    }
         }

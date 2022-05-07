@@ -8,18 +8,20 @@ import com.foonk.spring.dto.UserFilter;
 import com.querydsl.jpa.impl.JPAQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import static com.foonk.spring.database.entity.QUser.user;
 
 @RequiredArgsConstructor
 public class FilterUserRepositoryImpl implements FilterUserRepository {
 
-    private final EntityManager entityManager;
-    private final JdbcTemplate jdbcTemplate;
     private static final String FIND_BY_COMPANY_AND_ROLE = """
         SELECT 
             firstname,
@@ -30,12 +32,30 @@ public class FilterUserRepositoryImpl implements FilterUserRepository {
             AND role = ?
         """;
 
+    private static final String UPDATE_COMPANY_AND_ROLE = """
+        UPDATE users
+        SET company_id = ?,
+            role = ?
+        WHERE id = ?
+        """;
+
+    private static final String UPDATE_COMPANY_AND_ROLE_NAMED = """
+        UPDATE users
+        SET company_id = :companyId,
+            role = :role
+        WHERE id = :id
+        """;
+
+    private final EntityManager entityManager;
+    private final JdbcTemplate jdbcTemplate;
+    private final NamedParameterJdbcTemplate namedJdbcTemplate;
+
     @Override
     public List<User> findAllByFilter(UserFilter filter) {
         var predicate = QPredicates.builder()
-                .add(filter.getFirstname(), user.firstname::containsIgnoreCase)
-                .add(filter.getLastname(), user.lastname::containsIgnoreCase)
-                .add(filter.getBirthDate(), user.birthDate::before)
+                .add(filter.firstname(), user.firstname::containsIgnoreCase)
+                .add(filter.lastname(), user.lastname::containsIgnoreCase)
+                .add(filter.birthDate(), user.birthDate::before)
                 .build();
 
         return new JPAQuery<User>(entityManager)
@@ -54,5 +74,8 @@ public class FilterUserRepositoryImpl implements FilterUserRepository {
                         rs.getDate("birth_date").toLocalDate()
                 ), companyId, role.name());
     }
+
+
+
 
 }

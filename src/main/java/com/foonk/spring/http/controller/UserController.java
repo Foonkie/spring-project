@@ -1,17 +1,25 @@
 package com.foonk.spring.http.controller;
 
 import com.foonk.spring.database.entity.Role;
+import com.foonk.spring.dto.PageResponse;
 import com.foonk.spring.dto.UserCreateEditDto;
+import com.foonk.spring.dto.UserFilter;
+import com.foonk.spring.dto.UserReadDto;
 import com.foonk.spring.service.CompanyService;
 import com.foonk.spring.service.UserService;
 import liquibase.pro.packaged.S;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/users")
@@ -22,8 +30,10 @@ public class UserController {
     private final CompanyService companyService;
 
     @GetMapping
-    public String findAll(Model model) {
-        model.addAttribute("users", userService.findAll());
+    public String findAll(Model model, UserFilter userFilter, Pageable pageable) {
+        Page<UserReadDto> page = userService.findAll(userFilter, pageable);
+        model.addAttribute("users", PageResponse.of(page));
+        model.addAttribute("filter", userFilter);
 //        model.addAttribute("users", userService.findAll(filter));
         return "user/users";
     }
@@ -58,6 +68,8 @@ public class UserController {
 //        }
         return "redirect:/users/" + userService.create(user).getId();
     }
+
+
 
     //    @PutMapping("/{id}")
     @PostMapping("/{id}/update")
