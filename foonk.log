@@ -1,33 +1,32 @@
-2022-05-07 23:42:13.413  INFO 9036 --- [main] com.foonk.spring.ApplicationRunner       : Starting ApplicationRunner using Java 17.0.2 on Kate with PID 9036 (C:\Users\Katyusha\IdeaProjects\spring-project\build\classes\java\main started by Katyusha in C:\Users\Katyusha\IdeaProjects\spring-project)
-2022-05-07 23:42:13.751  INFO 9036 --- [main] com.foonk.spring.ApplicationRunner       : The following profiles are active: qa
-2022-05-07 23:42:16.416  INFO 9036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-05-07 23:42:16.591  INFO 9036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 163 ms. Found 2 JPA repository interfaces.
-2022-05-07 23:42:17.951  INFO 9036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-05-07 23:42:17.976  INFO 9036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-05-07 23:42:17.976  INFO 9036 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-05-07 23:42:18.501  INFO 9036 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2022-05-07 23:42:18.526  INFO 9036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-05-07 23:42:18.531  INFO 9036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4104 ms
-2022-05-07 23:42:19.086  INFO 9036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-05-07 23:42:19.306  INFO 9036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-05-07 23:42:19.701  INFO 9036 --- [main] liquibase.database                       : Set default schema name to public
-2022-05-07 23:42:19.896  INFO 9036 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
-2022-05-07 23:42:20.166  INFO 9036 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
-2022-05-07 23:42:20.256  INFO 9036 --- [main] liquibase.lockservice                    : Successfully released change log lock
-2022-05-07 23:42:20.436  INFO 9036 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-05-07 23:42:20.581  INFO 9036 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
-2022-05-07 23:42:20.931  INFO 9036 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-05-07 23:42:21.161  INFO 9036 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2022-05-07 23:42:21.221  INFO 9036 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
-2022-05-07 23:42:24.030  INFO 9036 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-05-07 23:42:24.210  INFO 9036 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-05-07 23:42:24.224  INFO 9036 --- [main] c.foonk.spring.config.JpaConfiguration   : Jpa configuration is enabled
-2022-05-07 23:42:24.256  INFO 9036 --- [main] c.f.spring.database.pool.ConnectionPool  : Init connection pool
-2022-05-07 23:42:25.386  INFO 9036 --- [main] c.f.spring.database.pool.ConnectionPool  : Init connection pool
-2022-05-07 23:42:25.476  WARN 9036 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-05-07 23:42:26.136  INFO 9036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-05-07 23:42:26.156  INFO 9036 --- [main] com.foonk.spring.ApplicationRunner       : Started ApplicationRunner in 16.277 seconds (JVM running for 19.334)
-2022-05-07 23:42:44.158  INFO 9036 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-05-07 23:42:44.163  INFO 9036 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-05-07 23:42:44.167  INFO 9036 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-05-07 23:43:40.267  WARN 9036 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.ModelAttributeMethodProcessor$1: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'userFilter' on field 'birthDate': rejected value []; codes [typeMismatch.userFilter.birthDate,typeMismatch.birthDate,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userFilter.birthDate,birthDate]; arguments []; default message [birthDate]]; default message [Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDate'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value ''; nested exception is java.time.format.DateTimeParseException: Text '' could not be parsed at index 0]]
+2022-05-08 00:07:12.214  INFO 5136 --- [main] com.foonk.spring.ApplicationRunner       : Starting ApplicationRunner using Java 17.0.2 on Kate with PID 5136 (C:\Users\Katyusha\IdeaProjects\spring-project\build\classes\java\main started by Katyusha in C:\Users\Katyusha\IdeaProjects\spring-project)
+2022-05-08 00:07:12.232  INFO 5136 --- [main] com.foonk.spring.ApplicationRunner       : The following profiles are active: qa
+2022-05-08 00:07:14.438  INFO 5136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-08 00:07:14.745  INFO 5136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 232 ms. Found 2 JPA repository interfaces.
+2022-05-08 00:07:16.223  INFO 5136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-08 00:07:16.233  INFO 5136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-08 00:07:16.233  INFO 5136 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-05-08 00:07:16.672  INFO 5136 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-05-08 00:07:16.692  INFO 5136 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-08 00:07:16.697  INFO 5136 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4157 ms
+2022-05-08 00:07:17.102  INFO 5136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-08 00:07:17.292  INFO 5136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-08 00:07:17.550  INFO 5136 --- [main] liquibase.database                       : Set default schema name to public
+2022-05-08 00:07:17.715  INFO 5136 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2022-05-08 00:07:17.950  INFO 5136 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2022-05-08 00:07:18.045  INFO 5136 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2022-05-08 00:07:18.240  INFO 5136 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-08 00:07:18.334  INFO 5136 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-05-08 00:07:18.600  INFO 5136 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-08 00:07:18.765  INFO 5136 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-05-08 00:07:18.805  INFO 5136 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2022-05-08 00:07:20.677  INFO 5136 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-08 00:07:20.798  INFO 5136 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 00:07:20.809  INFO 5136 --- [main] c.foonk.spring.config.JpaConfiguration   : Jpa configuration is enabled
+2022-05-08 00:07:20.821  INFO 5136 --- [main] c.f.spring.database.pool.ConnectionPool  : Init connection pool
+2022-05-08 00:07:21.939  INFO 5136 --- [main] c.f.spring.database.pool.ConnectionPool  : Init connection pool
+2022-05-08 00:07:22.063  WARN 5136 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-08 00:07:22.848  INFO 5136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-08 00:07:22.863  INFO 5136 --- [main] com.foonk.spring.ApplicationRunner       : Started ApplicationRunner in 12.991 seconds (JVM running for 16.91)
+2022-05-08 00:07:33.589  INFO 5136 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-08 00:07:33.590  INFO 5136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-08 00:07:33.592  INFO 5136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
