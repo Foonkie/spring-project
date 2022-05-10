@@ -6,6 +6,7 @@ import lombok.NonNull;
 import lombok.Value;
 import lombok.experimental.FieldNameConstants;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.Email;
 import java.time.LocalDate;
@@ -24,6 +25,10 @@ public class UserCreateEditDto {
     String firstname;
 
     String lastname;
+
     Role role;
+
     Integer companyId;
+
+    MultipartFile image;
 }
