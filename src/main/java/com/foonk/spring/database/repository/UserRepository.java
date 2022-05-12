@@ -16,11 +16,13 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.history.RevisionRepository;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>,
@@ -54,6 +56,8 @@ public interface UserRepository extends JpaRepository<User, Long>,
         "WHERE company_id = :companyId",
         nativeQuery = true)
 List<PersonalInfo2> findAllByCompanyId(Integer companyId);
+
+   Optional<User> findByUsername(String username);
 }
 
 
