@@ -20,7 +20,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                        .antMatchers("/users/{\\d+}/delete").hasAuthority("ADMIN")
                        .antMatchers("/admin/**").hasAuthority("ADMIN")
                        .anyRequest().authenticated()
-
                )
 //               .httpBasic(Customizer.withDefaults());
                .logout(logout->logout
